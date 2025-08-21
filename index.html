@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MANTI BERLIN – Hausgemachte Manti & türkische Küche</title>
+  <meta name="description" content="MANTI BERLIN – Hausgemachte Manti, frische Meze und herzliche Gastfreundschaft. Schlichte One‑Page Website mit Speisekarte, Reservierung und Standort in Berlin." />
+  <meta name="theme-color" content="#111111">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141414'/%3E%3Cpath d='M20 44 L20 20 L32 32 L44 20 L44 44' fill='none' stroke='%23e2b45c' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <meta property="og:title" content="MANTI BERLIN – Hausgemachte Manti & türkische Küche">
+  <meta property="og:description" content="Hausgemachte Manti in Berlin. Schlichtes Design, große Aromen. Reserviere deinen Tisch.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1617195737492-0134a6e1ee75?q=80&w=1200&auto=format&fit=crop">
+  <style>
+    :root {
+      --bg: #0e0e0e;
+      --card: #151515;
+      --muted: #9a9a9a;
+      --text: #f5f5f5;
+      --accent: #e2b45c; /* warm sesame-gold */
+      --accent-2: #d45b44; /* tomato */
+      --radius: 14px;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(1200px 600px at 70% -20%, rgba(226,180,92,0.12), transparent 60%),
+                  radial-gradient(900px 500px at -10% 20%, rgba(212,91,68,0.08), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      letter-spacing: 0.2px;
+    }
+    a { color: var(--text); text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(160%) blur(12px);
+      background: linear-gradient(180deg, rgba(14,14,14,0.9), rgba(14,14,14,0.7));
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 1.2px; }
+    .brand .mark {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: conic-gradient(from 210deg, var(--accent), var(--accent-2), var(--accent));
+      box-shadow: 0 6px 30px rgba(226,180,92,0.35);
+    }
+    nav a { margin: 0 10px; color: #d9d9d9; font-weight: 500; }
+    nav a:hover { color: white; }
+    .cta { display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 100px; background: #ffffff10; border: 1px solid #ffffff18; }
+    .cta strong { color: var(--accent); }
+    /* Hero */
+    .hero { padding: 78px 0 42px; }
+    .hero .wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center; }
+    .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: 700; }
+    .h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.08;
+      margin: 10px 0 12px;
+    }
+    .lead { color: #e7e7e7; font-size: 18px; max-width: 60ch; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 18px; border-radius: 12px; font-weight: 600;
+      border: 1px solid #ffffff22; background: #ffffff10;
+    }
+    .btn.primary { background: linear-gradient(180deg, #e2b45c, #cb9a3b); color: #1a1a1a; border: none; }
+    .btn:hover { transform: translateY(-1px); }
+    .hero-card {
+      background: linear-gradient(180deg, #191919, #121212);
+      border: 1px solid #ffffff12; border-radius: var(--radius); padding: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+    .hero-card img { border-radius: 12px; aspect-ratio: 4/3; object-fit: cover; }
+    .badges { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+    .badge { font-size: 12px; padding: 6px 10px; border-radius: 999px; background: #ffffff0e; border: 1px solid #ffffff14; color: #dcdcdc; }
+    /* Section */
+    section { padding: 68px 0; }
+    .section-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px, 4vw, 44px); margin: 0 0 10px; }
+    .muted { color: var(--muted); }
+    /* About */
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .about .card {
+      background: linear-gradient(180deg, #181818, #141414);
+      border: 1px solid #ffffff10; border-radius: var(--radius); padding: 24px;
+    }
+    /* Menu */
+    .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .menu-item {
+      background: linear-gradient(180deg, #191919, #121212);
+      border: 1px solid #ffffff12; border-radius: 16px; padding: 18px;
+    }
+    .menu-item header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 6px; }
+    .price { color: var(--accent); font-weight: 700; }
+    .pill { font-size: 11px; padding: 4px 8px; border-radius: 999px; background: #ffffff0e; border: 1px solid #ffffff14; color: #dcdcdc; }
+    /* Gallery */
+    .gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 12px; }
+    .gallery img { border-radius: 12px; height: 100%; object-fit: cover; }
+    /* Reviews */
+    .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .review { background: #141414; border: 1px solid #ffffff10; border-radius: 14px; padding: 16px; }
+    .stars { color: var(--accent); letter-spacing: 3px; }
+    /* CTA strip */
+    .strip {
+      background: linear-gradient(90deg, rgba(226,180,92,0.12), rgba(212,91,68,0.12));
+      border: 1px solid #ffffff14; border-radius: 16px; padding: 14px 16px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    /* Reservation */
+    .reserve { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
+    .form { background: #141414; border: 1px solid #ffffff10; border-radius: 14px; padding: 18px; }
+    .form label { display:block; font-size: 12px; color: var(--muted); margin-top: 10px; }
+    .form input, .form select, .form textarea {
+      width: 100%; margin-top: 6px; padding: 12px 12px; border-radius: 10px;
+      background: #101010; border: 1px solid #ffffff14; color: var(--text);
+    }
+    .form button { margin-top: 12px; width: 100%; }
+    .map { border: 1px solid #ffffff12; border-radius: 14px; overflow: hidden; min-height: 320px; }
+    /* Footer */
+    footer { border-top: 1px solid #ffffff12; padding: 28px 0 60px; color: #cfcfcf; }
+    footer .grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px; }
+    .small { font-size: 12px; color: #a9a9a9; }
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero .wrap, .about, .reserve { grid-template-columns: 1fr; }
+      .menu-grid { grid-template-columns: 1fr 1fr; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .reviews { grid-template-columns: 1fr 1fr; }
+      footer .grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .menu-grid, .gallery, .reviews { grid-template-columns: 1fr; }
+      footer .grid { grid-template-columns: 1fr; }
+      .cta { display: none; }
+    }
+  </style>
+  <script>
+    // Simple reservation "submit" handler – opens mailto with prefilled message
+    function submitReservation(e) {
+      e.preventDefault();
+      const f = e.target;
+      const data = {
+        name: f.name.value.trim(),
+        people: f.people.value,
+        date: f.date.value,
+        time: f.time.value,
+        note: f.note.value.trim()
+      };
+      const subject = encodeURIComponent("Reservierung – MANTI BERLIN");
+      const body = encodeURIComponent(
+        `Hallo MANTI BERLIN,\n\nich möchte reservieren:\n\nName: ${data.name}\nPersonen: ${data.people}\nDatum: ${data.date}\nUhrzeit: ${data.time}\nHinweis: ${data.note || "-"}\n\nVielen Dank!`
+      );
+      window.location.href = `mailto:hello@mantiberlin.de?subject=${subject}&body=${body}`;
+    }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "MANTI BERLIN",
+    "image": ["https://images.unsplash.com/photo-1617195737492-0134a6e1ee75?q=80&w=1200&auto=format&fit=crop"],
+    "servesCuisine": ["Türkisch", "Hausgemachte Manti"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Berlin",
+      "addressCountry": "DE"
+    },
+    "priceRange": "€€",
+    "telephone": "+49 30 000000",
+    "url": "https://mantiberlin.de",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "11:30", "closes": "21:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "11:30", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "20:30" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <span class="mark" aria-hidden="true"></span>
+        <a href="#top" style="font-size:15px;">MANTI BERLIN</a>
+      </div>
+      <nav>
+        <a href="#speisekarte">Speisekarte</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#reservieren">Reservieren</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="cta" href="tel:+4930000000"><strong>JETZT ANRUFEN</strong> • +49 30 000000</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container wrap">
+        <div>
+          <div class="eyebrow">Handgemacht • Herzhaft • Hausgemacht</div>
+          <h1 class="h1">Die besten Manti Berlins – schlicht serviert, groß im Geschmack.</h1>
+          <p class="lead">Fein gefüllte Teigtaschen, geschwenkt in Butter, veredelt mit Knoblauch‑Joghurt und Sumach.
+            Dazu frische Meze, hausgemachte Limonaden und ausgesuchte Weine.</p>
+          <div class="buttons">
+            <a class="btn primary" href="#reservieren">Tisch reservieren</a>
+            <a class="btn" href="#speisekarte">Speisekarte ansehen</a>
+          </div>
+          <div class="badges" aria-label="Qualitätsmerkmale">
+            <span class="badge">Täglich frisch</span>
+            <span class="badge">Vegetarisch & vegan</span>
+            <span class="badge">Ohne Zusatzstoffe</span>
+            <span class="badge">Zum Mitnehmen</span>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <img src="https://images.unsplash.com/photo-1617195737492-0134a6e1ee75?q=80&w=1200&auto=format&fit=crop" alt="Schale mit dampfenden Manti mit Joghurt und Butter" />
+          <div class="badges" style="margin-top:12px;">
+            <span class="badge">Kreuzberg • Berlin</span>
+            <span class="badge">Mo–Sa 11:30–22:00</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Speisekarte -->
+    <section id="speisekarte">
+      <div class="container">
+        <div class="strip">
+          <strong>Mittagsangebot:</strong> Manti + Ayran oder hausgemachte Limo – <span class="price">12,90 €</span>
+          <a class="btn" href="#reservieren" style="white-space: nowrap;">Reservieren</a>
+        </div>
+        <h2 class="section-title" style="margin-top: 20px;">Speisekarte</h2>
+        <p class="muted">Preise und Gerichte sind Beispiele und können vor Ort variieren.</p>
+        <div class="menu-grid">
+          <article class="menu-item">
+            <header>
+              <h3>Classic Manti</h3>
+              <div class="price">13,90 €</div>
+            </header>
+            <p>Rind & Lamm, Butter‑Paprika, Knoblauch‑Joghurt, Sumach & Minze.</p>
+            <div class="badges"><span class="pill">Hausgericht</span></div>
+          </article>
+          <article class="menu-item">
+            <header>
+              <h3>Vegetarische Manti</h3>
+              <div class="price">12,90 €</div>
+            </header>
+            <p>Spinat & Feta, braune Butter, Joghurt, Dill, Zitronenzeste.</p>
+            <div class="badges"><span class="pill">Vegetarisch</span></div>
+          </article>
+          <article class="menu-item">
+            <header>
+              <h3>Vegan Manti</h3>
+              <div class="price">12,90 €</div>
+            </header>
+            <p>Linsen & Kräuter, Chili‑Öl, Soja‑Joghurt, gerösteter Sesam.</p>
+            <div class="badges"><span class="pill">Vegan</span></div>
+          </article>
+          <article class="menu-item">
+            <header>
+              <h3>Meze Trio</h3>
+              <div class="price">8,90 €</div>
+            </header>
+            <p>Humus, Ezme, Auberginensalat – mit warmem Fladenbrot.</p>
+          </article>
+          <article class="menu-item">
+            <header>
+              <h3>Ayran / Limonade</h3>
+              <div class="price">3,20 €</div>
+            </header>
+            <p>Hausgemachter Ayran oder Zitronen‑Minz‑Limo, täglich frisch.</p>
+          </article>
+          <article class="menu-item">
+            <header>
+              <h3>Sütlaç</h3>
+              <div class="price">5,20 €</div>
+            </header>
+            <p>Türkischer Milchreis aus dem Ofen, Zimt & Pistazie.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Über uns -->
+    <section id="ueber-uns">
+      <div class="container about">
+        <div class="card">
+          <h2 class="section-title">Unsere Küche, unser Versprechen</h2>
+          <p>Bei MANTI BERLIN bereiten wir jeden Teig und jede Füllung täglich frisch zu – ohne Abkürzungen, ohne Zusätze. 
+            Unser Anspruch ist ein klarer Teller mit ausgewogenen Aromen: Butter trifft Joghurt, Sumach trifft Minze. 
+            Schlicht im Stil, großzügig im Geschmack.</p>
+          <ul>
+            <li>Qualität vor Quantität – wenige Gerichte, die wir perfekt beherrschen.</li>
+            <li>Zutaten von vertrauensvollen Partnern, wo möglich aus der Region.</li>
+            <li>Vegetarische & vegane Optionen ohne Kompromisse.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0;">Allergene & Hinweise</h3>
+          <p class="muted">Gluten, Milchprodukte, Sesam, Nüsse – bitte sprecht uns an, wir beraten euch gerne.</p>
+          <div class="badges">
+            <span class="badge">Take‑away</span>
+            <span class="badge">Kartenzahlung</span>
+            <span class="badge">WLAN</span>
+          </div>
+          <div style="height:12px;"></div>
+          <div class="strip">
+            <div><strong>Gutschein gesucht?</strong> Verschenke einen Besuch bei MANTI BERLIN.</div>
+            <a class="btn" href="#kontakt">Anfragen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galerie -->
+    <section id="galerie">
+      <div class="container">
+        <h2 class="section-title">Galerie</h2>
+        <p class="muted">Ein Blick sagt mehr als tausend Worte.</p>
+        <div class="gallery">
+          <img src="https://images.unsplash.com/photo-1604909052743-85b89475ba9a?q=80&w=1200&auto=format&fit=crop" alt="Tisch mit kleinen türkischen Meze in Berlin">
+          <img src="https://images.unsplash.com/photo-1576014131795-d2aa4fc98cd9?q=80&w=800&auto=format&fit=crop" alt="Frische Kräuter über einem herzhaften Gericht">
+          <img src="https://images.unsplash.com/photo-1533777324565-a040eb52fac1?q=80&w=800&auto=format&fit=crop" alt="Detailaufnahme von Teigtaschen und Joghurt">
+        </div>
+      </div>
+    </section>
+
+    <!-- Bewertungen -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Was Gäste sagen</h2>
+        <div class="reviews">
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>„Unglaublich aromatisch – die Classic Manti sind ein Gedicht. Minimalistischer Laden, maximale Qualität.“</p>
+            <div class="small">— Jonas K.</div>
+          </div>
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>„Vegane Option, die überzeugt. Freundlicher Service, klare Karte, faire Preise.“</p>
+            <div class="small">— Selin A.</div>
+          </div>
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>„Wie bei meiner Oma – nur in Berlin. Der Joghurt und die Butter… wow.“</p>
+            <div class="small">— Emre T.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservieren -->
+    <section id="reservieren">
+      <div class="container reserve">
+        <div>
+          <h2 class="section-title">Tisch reservieren</h2>
+          <p class="muted">Schnell & unkompliziert. Wir bestätigen per E‑Mail. Kurzfristig? <a href="tel:+4930000000">Anrufen</a> lohnt sich.</p>
+          <form class="form" onsubmit="submitReservation(event)">
+            <label for="name">Name</label>
+            <input id="name" name="name" required placeholder="Wie dürfen wir dich eintragen?">
+            <label for="people">Personen</label>
+            <select id="people" name="people">
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+            </select>
+            <label for="date">Datum</label>
+            <input type="date" id="date" name="date" required>
+            <label for="time">Uhrzeit</label>
+            <input type="time" id="time" name="time" required>
+            <label for="note">Hinweis (optional)</label>
+            <textarea id="note" name="note" rows="3" placeholder="Kinderstuhl, Allergien, Anlass…"></textarea>
+            <button class="btn primary" type="submit">Anfrage senden</button>
+          </form>
+          <p class="small">Mit Absenden wird deine E‑Mail‑App mit einer vorgefüllten Nachricht geöffnet.</p>
+        </div>
+        <div>
+          <div class="map">
+            <iframe title="Karte – MANTI BERLIN" width="100%" height="100%" style="border:0"
+              loading="lazy" allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2429.781616680122!2d13.4105304!3d52.4986431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84f9a3c0c9e0b%3A0x0000000000000000!2sKreuzberg%2C%20Berlin!5e0!3m2!1sde!2sde!4v1700000000000">
+            </iframe>
+          </div>
+          <div style="height:10px;"></div>
+          <div class="strip">
+            <div><strong>Adresse:</strong> Kreuzberg, Berlin (Platzhalter)</div>
+            <a class="btn" href="#kontakt">Kontakt</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="kontakt">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <div class="brand" style="margin-bottom:10px;">
+            <span class="mark" aria-hidden="true"></span>
+            <div>
+              <strong>MANTI BERLIN</strong><br/>
+              <span class="small">Schlichtes Design. Große Aromen.</span>
+            </div>
+          </div>
+          <p class="small">E‑Mail: <a href="mailto:hello@mantiberlin.de">hello@mantiberlin.de</a><br>
+          Telefon: <a href="tel:+4930000000">+49 30 000000</a><br>
+          Instagram: <a href="https://instagram.com/" target="_blank" rel="noopener">/mantiberlin</a></p>
+        </div>
+        <div>
+          <strong>Öffnungszeiten</strong>
+          <p class="small">
+            Mo–Do: 11:30–21:30<br>
+            Fr–Sa: 11:30–22:00<br>
+            So: 12:00–20:30
+          </p>
+        </div>
+        <div>
+          <strong>Adresse</strong>
+          <p class="small">Kreuzberg, 10999 Berlin<br>(Platzhalter – anpassbar)</p>
+          <a class="btn" href="#reservieren">Jetzt reservieren</a>
+        </div>
+      </div>
+      <p class="small" style="margin-top:28px;">© <span id="y"></span> MANTI BERLIN. Alle Rechte vorbehalten.</p>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
